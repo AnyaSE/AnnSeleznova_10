@@ -1,3 +1,31 @@
+a {
+  text-decoration: none;
+  /*removing the text decoration for links (i.e. underline)*/ }
 
+ul, ol {
+  list-style: none;
+  /*removing list styling (bullets) for the lists*/ }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+.wrapper .header {
+  display: flex;
+  flex-direction: row;
+  padding: 89px, 0;
+  width: 100%; }
+.wrapper .header__logo {
+  display: flex;
+  flex-direction: row;
+  padding: 70px, 100px; }
+.wrapper .header__wrap {
+  display: flex;
+  flex-direction: row; }
+.wrapper .logo__picture {
+  padding-right: 60px; }
+.wrapper .nav {
+  display: flex;
+  flex-direction: row; }
 
 /*# sourceMappingURL=main.css.map */

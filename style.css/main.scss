@@ -2,6 +2,43 @@ $size: 100px;
 $colorB: #5094f2;
 $colorR: #d94748;
 $colorY: #ebbb11;
+$width: 100%;
 
 @import 'mixin';
 
+a {
+    text-decoration: none; /*removing the text decoration for links (i.e. underline)*/
+}
+
+ul, ol {
+    list-style: none; /*removing list styling (bullets) for the lists*/
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+
+    .header {
+        @include flex();
+        padding: ($size - 11px, 0);
+        width: $width;
+    }
+        .header__logo {
+            @include flex ();
+            padding: ($size - 30px, $size);
+        }
+            .header__wrap {
+                @include flex ();
+            }
+
+            .logo__picture {
+                padding-right: ($size - 40px);
+            }
+                .nav {
+                    @include flex ();
+
+                }
+    }
