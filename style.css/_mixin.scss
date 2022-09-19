@@ -1,0 +1,30 @@
+@mixin border($x) {
+    border-radius: $x;
+}
+
+@mixin width ( $value: 100px ) {
+   width: $value;
+}
+
+@mixin font-size($size) {
+    font-size:$size;
+    font-size: ($size / 16px) * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size:$size;
+    font-size: ($size / 16px) * 1rem;
+}
+
+@mixin flex () {
+    display: flex; 
+    flex-direction: column;
+}
+
+@mixin getSize ($w, $h, $m) {
+    width: $w;
+    height: $h;
+    margin: $m;
+}
+
+
