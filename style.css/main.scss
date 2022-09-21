@@ -122,17 +122,71 @@ body {
 
     .button {
         width: $size + 72px;
-        padding: {
-            top: $size - 90px;
-            right: $size - 98px; 
-            bottom: $size - 90px; 
-            left: $size - 80px;
-        }
-
+        display: inline-block;
         margin-left: $size + 50px;
         @include font-size ($size * 0.22);
         background: $color--primary;
         border: none;
         color: $color--accent;
+        line-height: 44px;
+        @include flex();
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button:hover {
+        background: darken($color--primary, 20%);
+    }
+
+    .button__img {
+        padding-right: ($size - 90px);
+    }
+}
+
+.section {
+
+    .section__content {
+        @include flex();
+        justify-content: center;
+    } 
+
+    .section__subcontent {
+        @include flex();
+        flex-direction: column;
+        margin-top: $size;
+        margin-right: $size;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .circle--primary, .circle--secondary, .circle--additional {
+        width: $size + 86px;
+        height: $size + 86px;
+        border-radius: 50%;
+        background-color: $color--primary;
+        @include flex();
+        justify-content: center;
+        align-items: center;
+    }
+
+    .circle--secondary {
+        background-color: $color--secondary;
+    }
+
+    .circle--additional {
+        background-color: $color--additional;
+    }
+
+    .subcontent__title { 
+        @include font-size (20.4px);
+        color: $color--primary;
+        font-weight: 400;
+    }
+
+    .subconent__text {
+        font-size: 14.4px;
+        line-height: 1.2;
+        width: 70%;
     }
 }
