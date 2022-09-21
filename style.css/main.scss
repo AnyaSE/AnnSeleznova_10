@@ -1,7 +1,8 @@
 $size: 100px;
-$colorB: #5094f2;
-$colorR: #d94748;
-$colorY: #ebbb11;
+$color--primary: #5094f2;
+$color--secondary: #d94748;
+$color--additional: #ebbb11;
+$font-color: #6c6c6c;
 $width: 100%;
 
 @import 'mixin';
@@ -23,22 +24,51 @@ body {
 
     .header {
         @include flex();
-        padding: ($size - 11px, 0);
-        width: $width;
-    }
-        .header__logo {
-            @include flex ();
-            padding: ($size - 30px, $size);
+        padding: {
+            right: ($size - 70px);
+            left: ($size - 60px);
         }
-            .header__wrap {
-                @include flex ();
-            }
 
-            .logo__picture {
-                padding-right: ($size - 40px);
-            }
-                .nav {
-                    @include flex ();
+        align-items: center;
+        line-height: 1.2rem;
+    }   
 
-                }
+    .header__logo {
+        @include flex ();
+        padding-right: ($size - 80px);
     }
+
+    .header__wrap {
+        @include flex ();
+        align-items: center;
+    }
+
+    .logo__picture {
+        padding-right: ($size - 90px);
+    }
+
+    .logo__title {
+        @include font-size ($size * 0.42);
+        padding-right: ($size * 10);
+    }
+                
+    .nav {
+        @include flex ();
+        width: $width - 60%;
+    }
+
+    .nav__item {
+        padding-right: $size - 50px;
+        @include font-size ($size * 0.2);
+        letter-spacing: 0.01em;
+    }
+
+    a[class$="link"],  p[class$="text"]  {
+        color: $font-color;
+    }
+
+    a[class$="link"]:hover {
+        padding-bottom: ($size - 70px);
+        border-bottom: 3px solid $color--primary;
+    }
+}

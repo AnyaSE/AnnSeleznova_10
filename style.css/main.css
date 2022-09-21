@@ -13,19 +13,35 @@ body {
 .wrapper .header {
   display: flex;
   flex-direction: row;
-  padding: 89px, 0;
-  width: 100%; }
+  padding-right: 30px;
+  padding-left: 40px;
+  align-items: center;
+  line-height: 1.2rem; }
 .wrapper .header__logo {
   display: flex;
   flex-direction: row;
-  padding: 70px, 100px; }
+  padding-right: 20px; }
 .wrapper .header__wrap {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  align-items: center; }
 .wrapper .logo__picture {
-  padding-right: 60px; }
+  padding-right: 10px; }
+.wrapper .logo__title {
+  font-size: 42px;
+  padding-right: 1000px; }
 .wrapper .nav {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  width: 40%; }
+.wrapper .nav__item {
+  padding-right: 50px;
+  font-size: 20px;
+  letter-spacing: 0.01em; }
+.wrapper a[class$="link"], .wrapper p[class$="text"] {
+  color: #6c6c6c; }
+.wrapper a[class$="link"]:hover {
+  padding-bottom: 30px;
+  border-bottom: 3px solid #5094f2; }
 
 /*# sourceMappingURL=main.css.map */
