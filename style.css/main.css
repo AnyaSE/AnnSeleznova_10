@@ -8,7 +8,8 @@ ul, ol {
 
 body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  outline: 0; }
 
 .wrapper .header {
   display: flex;
@@ -62,5 +63,27 @@ body {
   z-index: 100; }
 .banner .banner__image {
   z-index: 100; }
+.banner .banner__title, .banner .banner__info {
+  padding-left: 150px;
+  color: white;
+  line-height: 34px;
+  font-weight: 400; }
+.banner .banner__title {
+  font-size: 42px;
+  padding-top: 100px; }
+.banner .banner__info {
+  font-size: 26px;
+  width: 50%; }
+.banner .button {
+  width: 172px;
+  padding-top: 10px;
+  padding-right: 2px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  margin-left: 150px;
+  font-size: 22px;
+  background: #5094f2;
+  border: none;
+  color: white; }
 
 /*# sourceMappingURL=main.css.map */
