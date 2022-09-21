@@ -72,3 +72,33 @@ body {
         border-bottom: 3px solid $color--primary;
     }
 }
+
+.banner {
+
+    .banner__background {
+        width: 100%;
+        position: absolute;
+        height: 579px;
+    }
+
+    .banner__content {
+        @include flex ();
+        z-index: 100;
+        padding: {
+            top: $size;
+            right: $size;
+            left: ($size * 2);
+        }
+    }
+    
+    .banner__item {
+        @include flex ();
+        flex-direction: column;
+        z-index: 100;
+    }
+
+    .banner__image {
+        z-index: 100;
+    }
+
+}

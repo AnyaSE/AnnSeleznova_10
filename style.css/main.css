@@ -44,4 +44,23 @@ body {
   padding-bottom: 30px;
   border-bottom: 3px solid #5094f2; }
 
+.banner .banner__background {
+  width: 100%;
+  position: absolute;
+  height: 579px; }
+.banner .banner__content {
+  display: flex;
+  flex-direction: row;
+  z-index: 100;
+  padding-top: 100px;
+  padding-right: 100px;
+  padding-left: 200px; }
+.banner .banner__item {
+  display: flex;
+  flex-direction: row;
+  flex-direction: column;
+  z-index: 100; }
+.banner .banner__image {
+  z-index: 100; }
+
 /*# sourceMappingURL=main.css.map */
