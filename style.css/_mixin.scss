@@ -1,23 +1,26 @@
-@mixin border($x) {
+
+@mixin font-size($size, $fw, $lh) {
+    font-size:$size;
+    font-weight: $fw;
+    line-height: $lh;
+}
+
+@mixin flex ($dir, $jc, $ai) {
+    display: flex; 
+    flex-direction: $dir;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin button ($width, $display, $bg, $border, $color) {
+    width: $width; 
+    display: $display; 
+    background: $bg;
+    border: $border;
+    color: $color;
+
+}
+
+@mixin border-radius ($x) {
     border-radius: $x;
 }
-
-@mixin width ( $value: 100px ) {
-   width: $value;
-}
-
-@mixin font-size($size) {
-    font-size:$size;
-}
-
-@mixin flex () {
-    display: flex; 
-    flex-direction: row;
-}
-
-@mixin getSize ($w, $m) {
-    width: $w;
-    margin: $m;
-}
-
-

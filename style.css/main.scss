@@ -1,12 +1,23 @@
-$size: 100px;
+$size: 100px; 
 $color--primary: #5094f2;
 $color--secondary: #d94748;
 $color--additional: #ebbb11;
 $color--accent: white;
 $font-color: #6c6c6c;
 $width: 100%;
+$fw: 400;
+$z: 100;
+
 
 @import 'mixin';
+
+@font-face {
+    font-family: 'Myriad Pro Regular';
+    src: local('Myriad Pro Regular'), url('MYRIADPRO-REGULAR.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 a {
     text-decoration: none; /*removing the text decoration for links (i.e. underline)*/
@@ -21,29 +32,27 @@ body {
     padding: 0;
     outline: 0;
     border: 0;
+    font-family: 'Myriad Pro Regular';
+    line-height: 1;
 }
 
 .wrapper {
 
     .header {
-        @include flex();
+        @include flex(row, flex-start, center);
         padding: {
             right: ($size - 70px);
             left: ($size - 60px);
         }
-
-        align-items: center;
-        line-height: 1.2rem;
     }   
 
     .header__logo {
-        @include flex ();
+        @include flex (row, flex-start, flex-start);
         padding-right: ($size - 80px);
     }
 
     .header__wrap {
-        @include flex ();
-        align-items: center;
+        @include flex (row, flex-start, center);
     }
 
     .logo__picture {
@@ -51,27 +60,27 @@ body {
     }
 
     .logo__title {
-        @include font-size ($size * 0.42);
+        @include font-size ($size * 0.42, $fw, 1);
         padding-right: ($size * 10);
     }
                 
     .nav {
-        @include flex ();
-        width: $width - 60%;
+        @include flex (row, flex-start, flex-start);
+        width: ($width - 60%);
     }
 
     .nav__item {
         padding-right: $size - 50px;
-        @include font-size ($size * 0.2);
+        @include font-size ($size * 0.2, $fw, 1);
         letter-spacing: 0.01em;
     }
 
-    a[class$="link"],  p[class$="text"]  {
+    a[class$="link"],  p[class$="text"], .product__title, .subproduct__title {
         color: $font-color;
     }
 
     a[class$="link"]:hover {
-        padding-bottom: ($size - 70px);
+        padding-bottom: ($size - 60px);
         border-bottom: 3px solid $color--primary;
     }
 }
@@ -79,64 +88,51 @@ body {
 .banner {
 
     .banner__background {
-        width: 100%;
+        width: $width;
         position: absolute;
-        height: 579px;
+        height: ($size*5 + 79px);
     }
 
     .banner__content {
-        @include flex ();
-        z-index: 100;
+        @include flex (row, flex-start, flex-start);
         padding: {
             top: $size;
             right: $size;
             left: ($size * 2);
         }
     }
+
+    .banner__content, .banner__item, .banner__image {
+        z-index: $z;
+    }
     
     .banner__item {
-        @include flex ();
-        flex-direction: column;
-        z-index: 100;
-    }
-
-    .banner__image {
-        z-index: 100;
+        @include flex (column,flex-start,flex-start);
     }
 
     .banner__title, .banner__info {
         padding-left: $size + 50px;
         color: $color--accent;
-        line-height: $size - 66px; 
-        font-weight: 400;      
     }
 
     .banner__title {
-        font-size: ($size*0.42);
+        @include font-size ($size*0.42, $fw, 44px);
         padding-top: $size;
     }
 
     .banner__info {
-        font-size: ($size*0.26);
-        width: $width - 50%; 
+        @include font-size ($size*0.26, $fw, 44px);
+        width: ($width - 50%); 
     }
 
     .button {
-        width: $size + 72px;
-        display: inline-block;
+        @include button (($size + 72px), inline-block, $color--primary, none, $color--accent);
         margin-left: $size + 50px;
-        @include font-size ($size * 0.22);
-        background: $color--primary;
-        border: none;
-        color: $color--accent;
-        line-height: 44px;
-        @include flex();
-        justify-content: center;
-        align-items: center;
-    }
-
-    .button:hover {
-        background: darken($color--primary, 20%);
+        @include font-size ($size * 0.22, $fw, 44px);
+        @include flex(row, center, center);
+        &:hover {
+            background: darken($color--primary, 20%);
+        }
     }
 
     .button__img {
@@ -147,32 +143,26 @@ body {
 .section {
 
     .section__content {
-        @include flex();
-        justify-content: center;
+        @include flex(row, center, flex-start);
     } 
 
     .section__subcontent {
-        @include flex();
-        flex-direction: column;
+        @include flex(column, center, center);
         margin: {
             top: $size;
             right: $size; 
             left: $size;
         }
 
-        justify-content: center;
-        align-items: center;
         text-align: center;
     }
 
     .circle--primary, .circle--secondary, .circle--additional {
-        width: $size + 86px;
-        height: $size + 86px;
-        border-radius: 50%;
+        width: ($size + 86px);
+        height: ($size + 86px);
+        @include border-radius (50%);
         background-color: $color--primary;
-        @include flex();
-        justify-content: center;
-        align-items: center;
+        @include flex(row, center, center);
     }
 
     .circle--secondary {
@@ -184,19 +174,17 @@ body {
     }
 
     .subcontent__title { 
-        @include font-size (20.4px);
+        @include font-size ($size *0.2, $fw, 44px);
         color: $color--primary;
-        font-weight: 400;
     }
 
     .subconent__text {
-        font-size: 14.4px;
-        line-height: 1.2;
-        width: 70%;
+        @include font-size ($size*0.14, $fw, 1.2);
+        width: ($width - 30%);
     }
 
     .product__section {
-        @include flex();
+        @include flex(row,flex-start,flex-start);
         margin: {
             top: $size/2;
             right: $size; 
@@ -207,8 +195,7 @@ body {
     }
 
     .product__content, .product__info {
-        @include flex();
-        flex-direction: column;
+        @include flex(column,flex-start,flex-start);
     }
 
     .product__content {
@@ -218,31 +205,24 @@ body {
 
     .product__title  {
         padding-bottom: $size/4;
-        font-size: 42.4px;
-        font-weight: 400;
-        color: $font-color;
+        @include font-size ($size*0.42, $fw, 44px);
     }
 
     .subproduct__title {
         padding-top: $size; 
-        font-size: 26.4px;
-        font-weight: 400;
-        color: $font-color;
+        @include font-size ($size * 0.26, $fw, 44px);
     }
 
     .product__text {
-        width: 45%;
-        font-size: 15.4px;
-        line-height: 36px;
+        width: ($width - 55%);
+        @include font-size ($size *0.15, $fw, 36px);
     }
 }
 
 .footer {
     
     .footer__content {
-        @include flex();
-        justify-content: center;
-        align-items: center;
+        @include flex(row,center,center);
         padding: {
             top: $size/4;
             bottom: $size/4;
@@ -252,7 +232,7 @@ body {
     }
 
     .footer__text {
-        font-size: 15.4px;
+        @include font-size ($size* 0.15, $fw, 36px);
     }
 }
 
