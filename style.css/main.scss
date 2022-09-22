@@ -20,6 +20,7 @@ body {
     margin: 0;
     padding: 0;
     outline: 0;
+    border: 0;
 }
 
 .wrapper {
@@ -153,8 +154,12 @@ body {
     .section__subcontent {
         @include flex();
         flex-direction: column;
-        margin-top: $size;
-        margin-right: $size;
+        margin: {
+            top: $size;
+            right: $size; 
+            left: $size;
+        }
+
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -189,4 +194,65 @@ body {
         line-height: 1.2;
         width: 70%;
     }
+
+    .product__section {
+        @include flex();
+        margin: {
+            top: $size/2;
+            right: $size; 
+            left: $size*2; 
+        }
+
+        padding-bottom: $size/2;
+    }
+
+    .product__content, .product__info {
+        @include flex();
+        flex-direction: column;
+    }
+
+    .product__content {
+        align-items: center;
+        padding-right: $size;
+    }
+
+    .product__title  {
+        padding-bottom: $size/4;
+        font-size: 42.4px;
+        font-weight: 400;
+        color: $font-color;
+    }
+
+    .subproduct__title {
+        padding-top: $size; 
+        font-size: 26.4px;
+        font-weight: 400;
+        color: $font-color;
+    }
+
+    .product__text {
+        width: 45%;
+        font-size: 15.4px;
+        line-height: 36px;
+    }
 }
+
+.footer {
+    
+    .footer__content {
+        @include flex();
+        justify-content: center;
+        align-items: center;
+        padding: {
+            top: $size/4;
+            bottom: $size/4;
+        }
+
+        border-top: $font-color 1px solid;
+    }
+
+    .footer__text {
+        font-size: 15.4px;
+    }
+}
+
