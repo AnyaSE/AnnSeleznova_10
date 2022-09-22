@@ -1,3 +1,4 @@
+/*setting the values below*/
 $size: 100px; 
 $color--primary: #5094f2;
 $color--secondary: #d94748;
@@ -5,12 +6,13 @@ $color--additional: #ebbb11;
 $color--accent: white;
 $font-color: #6c6c6c;
 $width: 100%;
-$fw: 400;
-$z: 100;
+$fw: 400; /*font-weight*/
+$z: 100; /*z-index*/
 
-
+/*importing mixin*/
 @import 'mixin';
 
+/*importing the font below*/
 @font-face {
     font-family: 'Myriad Pro Regular';
     src: local('Myriad Pro Regular'), url('MYRIADPRO-REGULAR.ttf') format('truetype');
@@ -28,211 +30,211 @@ ul, ol {
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    border: 0;
-    font-family: 'Myriad Pro Regular';
-    line-height: 1;
+    margin: 0; /*resetting the styling. margin 0*/
+    padding: 0; /*resetting the styling. padding 0*/
+    outline: 0; /*resetting the styling. outline 0*/
+    border: 0; /*resetting the styling. border 0*/
+    font-family: 'Myriad Pro Regular'; /*including the font*/
+    line-height: 1; /*resetting the styling. line height 1*/
 }
 
 .wrapper {
 
     .header {
-        @include flex(row, flex-start, center);
+        @include flex(row, flex-start, center); /*including flex*/
         padding: {
-            right: ($size - 70px);
-            left: ($size - 60px);
+            right: ($size - 70px); /*including the padding for the header*/
+            left: ($size - 60px); /*including the padding for the header*/
         }
     }   
 
     .header__logo {
-        @include flex (row, flex-start, flex-start);
-        padding-right: ($size - 80px);
+        @include flex (row, flex-start, flex-start); /*including flex*/
+        padding-right: ($size - 80px); /*including padding*/
     }
 
     .header__wrap {
-        @include flex (row, flex-start, center);
+        @include flex (row, flex-start, center); /*including flex*/
     }
 
     .logo__picture {
-        padding-right: ($size - 90px);
+        padding-right: ($size - 90px); /*including padding*/
     }
 
     .logo__title {
-        @include font-size ($size * 0.42, $fw, 1);
-        padding-right: ($size * 10);
+        @include font-size ($size * 0.42, $fw, 1); /*including font details*/
+        padding-right: ($size * 10); /*including padding*/
     }
                 
     .nav {
-        @include flex (row, flex-start, flex-start);
-        width: ($width - 60%);
+        @include flex (row, flex-start, flex-start); /*including flex*/
+        width: ($width - 60%); /*including width*/
     }
 
     .nav__item {
-        padding-right: $size - 50px;
-        @include font-size ($size * 0.2, $fw, 1);
-        letter-spacing: 0.01em;
+        padding-right: $size - 50px; /*including padding*/
+        @include font-size ($size * 0.2, $fw, 1); /*including font-size*/
+        letter-spacing: 0.01em; /*including letter spacing*/
     }
 
     a[class$="link"],  p[class$="text"], .product__title, .subproduct__title {
-        color: $font-color;
+        color: $font-color; /*including font-color*/
     }
 
     a[class$="link"]:hover {
-        padding-bottom: ($size - 60px);
-        border-bottom: 3px solid $color--primary;
+        padding-bottom: ($size - 60px); /*padding bottom when hover*/
+        border-bottom: 3px solid $color--primary; /*border bottom when hovering*/
     }
 }
 
 .banner {
 
     .banner__background {
-        width: $width;
-        position: absolute;
-        height: ($size*5 + 79px);
+        width: $width; /*including width*/
+        position: absolute; /*including position*/
+        height: ($size*5 + 79px); /*including height*/
     }
 
     .banner__content {
-        @include flex (row, flex-start, flex-start);
+        @include flex (row, flex-start, flex-start); /*including flex*/
         padding: {
-            top: $size;
-            right: $size;
-            left: ($size * 2);
+            top: $size; /*including padding*/
+            right: $size; /*including padding*/
+            left: ($size * 2); /*including padding*/
         }
     }
 
     .banner__content, .banner__item, .banner__image {
-        z-index: $z;
+        z-index: $z; /*including z index*/
     }
     
     .banner__item {
-        @include flex (column,flex-start,flex-start);
+        @include flex (column,flex-start,flex-start); /*including fkex*/
     }
 
     .banner__title, .banner__info {
-        padding-left: $size + 50px;
-        color: $color--accent;
+        padding-left: $size + 50px; /*including padding*/
+        color: $color--accent; /*setting color*/
     }
 
     .banner__title {
-        @include font-size ($size*0.42, $fw, 44px);
-        padding-top: $size;
+        @include font-size ($size*0.42, $fw, 44px); 
+        padding-top: $size; /*including padding*/
     }
 
     .banner__info {
-        @include font-size ($size*0.26, $fw, 44px);
-        width: ($width - 50%); 
+        @include font-size ($size*0.26, $fw, 44px); /*including font details*/
+        width: ($width - 50%); /*including width*/
     }
 
     .button {
-        @include button (($size + 72px), inline-block, $color--primary, none, $color--accent);
-        margin-left: $size + 50px;
-        @include font-size ($size * 0.22, $fw, 44px);
-        @include flex(row, center, center);
+        @include button (($size + 72px), inline-block, $color--primary, none, $color--accent); /*including button details*/
+        margin-left: $size + 50px;  /*including margin left*/
+        @include font-size ($size * 0.22, $fw, 44px); /*including font details*/
+        @include flex(row, center, center); /*including flex for footer*/
         &:hover {
-            background: darken($color--primary, 20%);
+            background: darken($color--primary, 20%); /*including button details when hovering*/
         }
     }
 
     .button__img {
-        padding-right: ($size - 90px);
+        padding-right: ($size - 90px); /*including padding*/
     }
 }
 
 .section {
 
     .section__content {
-        @include flex(row, center, flex-start);
+        @include flex(row, center, flex-start); /*including flex for footer*/
     } 
 
     .section__subcontent {
-        @include flex(column, center, center);
+        @include flex(column, center, center); /*including flex for footer*/
         margin: {
-            top: $size;
-            right: $size; 
-            left: $size;
+            top: $size; /*including margin*/
+            right: $size; /*including margin*/
+            left: $size; /*including margin*/
         }
 
-        text-align: center;
+        text-align: center; /*aligning text in the center*/
     }
 
     .circle--primary, .circle--secondary, .circle--additional {
-        width: ($size + 86px);
-        height: ($size + 86px);
-        @include border-radius (50%);
-        background-color: $color--primary;
-        @include flex(row, center, center);
+        width: ($size + 86px); /*including width*/
+        height: ($size + 86px);  /*including height*/
+        @include border-radius (50%); /*including border radius*/
+        background-color: $color--primary; /*including bg color*/
+        @include flex(row, center, center); /*including flex for footer*/
     }
 
     .circle--secondary {
-        background-color: $color--secondary;
+        background-color: $color--secondary; /*setting bg color*/
     }
 
     .circle--additional {
-        background-color: $color--additional;
+        background-color: $color--additional; /*setting bg color*/
     }
 
     .subcontent__title { 
-        @include font-size ($size *0.2, $fw, 44px);
-        color: $color--primary;
+        @include font-size ($size *0.2, $fw, 44px); /*including font details*/
+        color: $color--primary; /*setting the color*/
     }
 
     .subconent__text {
-        @include font-size ($size*0.14, $fw, 1.2);
-        width: ($width - 30%);
+        @include font-size ($size*0.14, $fw, 1.2); /*including font details*/
+        width: ($width - 30%); /*setting the width*/
     }
 
     .product__section {
-        @include flex(row,flex-start,flex-start);
+        @include flex(row,flex-start,flex-start); /*including flex for footer*/
         margin: {
-            top: $size/2;
-            right: $size; 
-            left: $size*2; 
+            top: $size/2; /*setting the margin*/
+            right: $size; /*setting the margin*/
+            left: $size*2; /*setting the margin*/
         }
 
-        padding-bottom: $size/2;
+        padding-bottom: $size/2; /*including padding*/
     }
 
     .product__content, .product__info {
-        @include flex(column,flex-start,flex-start);
+        @include flex(column,flex-start,flex-start); /*including flex for footer*/
     }
 
     .product__content {
-        align-items: center;
-        padding-right: $size;
+        align-items: center; /*aligning items in the center*/
+        padding-right: $size; /*including padding*/
     }
 
     .product__title  {
-        padding-bottom: $size/4;
-        @include font-size ($size*0.42, $fw, 44px);
+        padding-bottom: $size/4; /*including padding*/
+        @include font-size ($size*0.42, $fw, 44px); /*including font details*/
     }
 
     .subproduct__title {
-        padding-top: $size; 
-        @include font-size ($size * 0.26, $fw, 44px);
+        padding-top: $size; /*including padding*/
+        @include font-size ($size * 0.26, $fw, 44px); /*including font details*/
     }
 
     .product__text {
-        width: ($width - 55%);
-        @include font-size ($size *0.15, $fw, 36px);
+        width: ($width - 55%); /*including width*/
+        @include font-size ($size *0.15, $fw, 36px); /*including font details*/
     }
 }
 
 .footer {
     
     .footer__content {
-        @include flex(row,center,center);
+        @include flex(row,center,center); /*including flex for footer*/
         padding: {
-            top: $size/4;
-            bottom: $size/4;
+            top: $size/4; /*including padding*/
+            bottom: $size/4; /*including padding*/
         }
 
-        border-top: $font-color 1px solid;
+        border-top: $font-color 1px solid; /*including border top for footer*/
     }
 
     .footer__text {
-        @include font-size ($size* 0.15, $fw, 36px);
+        @include font-size ($size* 0.15, $fw, 36px); /*including font details*/
     }
 }
 
