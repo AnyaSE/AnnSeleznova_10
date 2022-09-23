@@ -86,7 +86,7 @@ body {
   color: #6c6c6c;
   /*including font-color*/ }
 .wrapper a[class$="link"]:hover {
-  padding-bottom: 40px;
+  padding-bottom: 45px;
   /*padding bottom when hover*/
   border-bottom: 3px solid #5094f2;
   /*border bottom when hovering*/ }
@@ -118,7 +118,8 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  /*including fkex*/ }
+  /*including flex*/
+  white-space: none; }
 .banner .banner__title, .banner .banner__info {
   padding-left: 150px;
   /*including padding*/
@@ -136,7 +137,8 @@ body {
   line-height: 44px;
   /*including font details*/
   width: 50%;
-  /*including width*/ }
+  /*including width*/
+  margin-top: -10px; }
 .banner .button {
   width: 172px;
   display: inline-block;
@@ -196,6 +198,8 @@ body {
   justify-content: center;
   align-items: center;
   /*including flex for footer*/ }
+  .section .circle--primary:hover, .section .circle--secondary:hover, .section .circle--additional:hover {
+    scale: 1.2; }
 .section .circle--secondary {
   background-color: #d94748;
   /*setting bg color*/ }
@@ -215,7 +219,8 @@ body {
   line-height: 1.2;
   /*including font details*/
   width: 70%;
-  /*setting the width*/ }
+  /*setting the width*/
+  margin-top: -25px; }
 .section .product__section {
   display: flex;
   flex-direction: row;

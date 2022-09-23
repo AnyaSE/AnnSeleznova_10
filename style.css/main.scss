@@ -82,7 +82,7 @@ body {
     }
 
     a[class$="link"]:hover {
-        padding-bottom: ($size - 60px); /*padding bottom when hover*/
+        padding-bottom: ($size - 55px); /*padding bottom when hover*/
         border-bottom: 3px solid $color--primary; /*border bottom when hovering*/
     }
 }
@@ -109,7 +109,8 @@ body {
     }
     
     .banner__item {
-        @include flex (column,flex-start,flex-start); /*including fkex*/
+        @include flex (column, flex-start, flex-start); /*including flex*/
+        white-space: none;
     }
 
     .banner__title, .banner__info {
@@ -125,6 +126,7 @@ body {
     .banner__info {
         @include font-size ($size*0.26, $fw, 44px); /*including font details*/
         width: ($width - 50%); /*including width*/
+        margin-top: $size - 110px;
     }
 
     .button {
@@ -165,6 +167,9 @@ body {
         @include border-radius (50%); /*including border radius*/
         background-color: $color--primary; /*including bg color*/
         @include flex(row, center, center); /*including flex for footer*/
+        &:hover {
+            scale: 1.2;
+        }
     }
 
     .circle--secondary {
@@ -183,6 +188,7 @@ body {
     .subconent__text {
         @include font-size ($size*0.14, $fw, 1.2); /*including font details*/
         width: ($width - 30%); /*setting the width*/
+        margin-top: ($size - 125px);
     }
 
     .product__section {
