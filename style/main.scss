@@ -61,9 +61,10 @@ body {
         padding-right: ($size - 90px); /*including padding*/
     }
 
-    .logo__title {
+    .logo__title, .logo__item {
         @include font-size ($size * 0.42, $fw, 1); /*including font details*/
-        padding-right: ($size * 10); /*including padding*/
+        padding-right: ($size * 5); /*including padding*/
+        color: black;
     }
                 
     .nav {
@@ -82,7 +83,7 @@ body {
     }
 
     a[class$="link"]:hover {
-        padding-bottom: ($size - 55px); /*padding bottom when hover*/
+        padding-bottom: ($size - 70px); /*padding bottom when hover*/
         border-bottom: 3px solid $color--primary; /*border bottom when hovering*/
     }
 }
@@ -130,7 +131,7 @@ body {
     }
 
     .button {
-        @include button (($size + 72px), inline-block, $color--primary, none, $color--accent); /*including button details*/
+        @include button (($size + 90px), inline-block, $color--primary, none, $color--accent); /*including button details*/
         margin-left: $size + 50px;  /*including margin left*/
         @include font-size ($size * 0.22, $fw, 44px); /*including font details*/
         @include flex(row, center, center); /*including flex for footer*/
