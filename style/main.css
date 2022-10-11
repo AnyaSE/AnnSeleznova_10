@@ -139,13 +139,13 @@ body {
   /*including width*/
   margin-top: -10px; }
 .banner .button {
-  width: 200px;
+  width: 190px;
   display: inline-block;
   background: #5094f2;
   border: none;
   color: white;
   /*including button details*/
-  margin-left: 150px;
+  margin-left: 175px;
   /*including margin left*/
   font-size: 22px;
   font-weight: 400;

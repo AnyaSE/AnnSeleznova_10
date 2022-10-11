@@ -130,8 +130,8 @@ body {
     }
 
     .button {
-        @include button (($size*2), inline-block, $color--primary, none, $color--accent); /*including button details*/
-        margin-left: $size + 50px;  /*including margin left*/
+        @include button (($size + 90px), inline-block, $color--primary, none, $color--accent); /*including button details*/
+        margin-left: $size + 75px;  /*including margin left*/
         @include font-size ($size * 0.22, $fw, 44px); /*including font details*/
         @include flex(row, center, center); /*including flex for footer*/
         &:hover {
