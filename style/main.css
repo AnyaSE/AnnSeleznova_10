@@ -63,7 +63,7 @@ body {
   font-weight: 400;
   line-height: 1;
   /*including font details*/
-  padding-right: 500px;
+  padding-right: 300px;
   /*including padding*/
   color: black; }
 .wrapper .nav {
@@ -71,9 +71,7 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  /*including flex*/
-  width: 40%;
-  /*including width*/ }
+  /*including flex*/ }
 .wrapper .nav__item {
   padding-right: 50px;
   /*including padding*/
@@ -141,7 +139,7 @@ body {
   /*including width*/
   margin-top: -10px; }
 .banner .button {
-  width: 190px;
+  width: 200px;
   display: inline-block;
   background: #5094f2;
   border: none;

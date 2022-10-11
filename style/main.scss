@@ -63,17 +63,16 @@ body {
 
     .logo__title, .logo__item {
         @include font-size ($size * 0.42, $fw, 1); /*including font details*/
-        padding-right: ($size * 5); /*including padding*/
+        padding-right: ($size*3); /*including padding*/
         color: black;
     }
                 
     .nav {
         @include flex (row, flex-start, flex-start); /*including flex*/
-        width: ($width - 60%); /*including width*/
     }
 
     .nav__item {
-        padding-right: $size - 50px; /*including padding*/
+        padding-right: $size/2; /*including padding*/
         @include font-size ($size * 0.2, $fw, 1); /*including font-size*/
         letter-spacing: 0.01em; /*including letter spacing*/
     }
@@ -131,7 +130,7 @@ body {
     }
 
     .button {
-        @include button (($size + 90px), inline-block, $color--primary, none, $color--accent); /*including button details*/
+        @include button (($size*2), inline-block, $color--primary, none, $color--accent); /*including button details*/
         margin-left: $size + 50px;  /*including margin left*/
         @include font-size ($size * 0.22, $fw, 44px); /*including font details*/
         @include flex(row, center, center); /*including flex for footer*/
